@@ -1,17 +1,28 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { InputFields, AddBtn } from './FormInput.styled';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addContact } from 'redux/actions';
 import { SubmitSchema } from './FormInput.styled';
+import { getContacts } from 'redux/selectors';
    
 export default function FormInput() {
 
   const dispatch = useDispatch();
+  const prevContacts = useSelector(getContacts);
 
   const onFormSubmit = data => {
-        const newContact = data;
-        dispatch(addContact(newContact));
-     };
+    
+    const isExist = prevContacts.some(
+      ({ name }) => name.toLocaleLowerCase() === data.name.toLocaleLowerCase());
+            
+    if (isExist) {
+      alert(`$This Name is already in contacts.`);
+      return;
+    };
+    
+    const newContact = data;
+    dispatch(addContact(newContact));
+  };
     
     return(
       <Formik
