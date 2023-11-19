@@ -1,20 +1,9 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
 import { InputFields, AddBtn } from './FormInput.styled';
 import { useDispatch } from "react-redux";
 import { addContact } from 'redux/actions';
-
-
-const SubmitSchema = Yup.object().shape({
-  name: Yup.string()
-    .matches(/^[a-zA-Z\s]+$/, 'Only letters are allowed')
-    .min(2, 'Too Short!')
-    .required('Please fill that'),
-  number: Yup.string()
-    .matches(/^\d{3}-\d{2}-\d{2}$/, 'Must be in format: 000-00-00')
-    .required('This field is required, please fill that'),
-});
-
+import { SubmitSchema } from './FormInput.styled';
+   
 export default function FormInput() {
 
   const dispatch = useDispatch();
