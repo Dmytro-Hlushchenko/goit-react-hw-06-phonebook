@@ -12,4 +12,4 @@ export const App = () => {
             <ContactsList />
         </div>
     );
-};
+};    

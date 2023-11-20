@@ -10,3 +10,7 @@ export const Item = styled.li`
 border: 1px solid black;
 justify-content: space-between;
 `
+export const DeleteBtn = styled.button`
+    background-color: grey;
+    
+`
