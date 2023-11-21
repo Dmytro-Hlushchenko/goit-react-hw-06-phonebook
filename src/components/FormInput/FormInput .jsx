@@ -1,7 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { InputFields, AddBtn } from './FormInput.styled';
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from 'redux/actions';
+import { addContact } from 'redux/phonebookSlice';
 import { SubmitSchema } from './FormInput.styled';
 import { getContacts } from 'redux/selectors';
 import { nanoid } from 'nanoid';

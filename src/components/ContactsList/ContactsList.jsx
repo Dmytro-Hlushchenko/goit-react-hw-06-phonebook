@@ -1,7 +1,7 @@
 import { getContacts, getFilter } from "redux/selectors";
 import { List, Item, DeleteBtn } from "./ContactList.styled"
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "redux/actions";
+import { deleteContact } from "redux/phonebookSlice";
 
 
 export default function ContactsList () {
