@@ -14,7 +14,7 @@ export default function ContactsList () {
         const lowerCaseFilter = filter.toLocaleLowerCase();
         return contacts.filter(contact => contact.name.toLocaleLowerCase().includes(lowerCaseFilter));
     };
-
+    
 return(
     <div>
         <List>
