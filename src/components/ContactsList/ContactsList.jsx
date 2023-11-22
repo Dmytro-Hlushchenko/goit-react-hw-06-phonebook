@@ -9,7 +9,7 @@ export default function ContactsList () {
     const contacts = useSelector(getContacts);
     const filter = useSelector(getFilter);
     const dispatch = useDispatch();
-        
+     console.log(contacts)
     const filteredContacts = () => {
         const lowerCaseFilter = filter.toLocaleLowerCase();
         return contacts.filter(contact => contact.name.toLocaleLowerCase().includes(lowerCaseFilter));
